@@ -41,8 +41,6 @@ class TaskViewModel: ObservableObject {
         tasks.remove(atOffsets: offsets)
     }
 
-    // MARK: - Persistence
-
     private func saveTasks() {
         if let encoded = try? JSONEncoder().encode(tasks) {
             UserDefaults.standard.set(encoded, forKey: tasksKey)
